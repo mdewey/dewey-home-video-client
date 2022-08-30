@@ -6,6 +6,11 @@ function SearchMovies() {
   const [searchTerm, setSearchTerm] = React.useState<string>('');
   const movies = useAppSelector(state => state.allMovies);
   const filteredMovies = useMemo(() => {
+    if (!searchTerm) {
+      return [...movies]
+        .sort((a, b) => Math.random() > 0.5 ? 1 : -1)
+        .filter((_, i) => i < 10);
+    }
     return movies
       .filter(movie => {
         console.log({

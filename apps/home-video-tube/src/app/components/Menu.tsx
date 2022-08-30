@@ -8,7 +8,7 @@ const NavMenu = () => {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/about">About</Link>
+          <Link to="/library">all videos</Link>
         </li>
       </ul>
     </div>
