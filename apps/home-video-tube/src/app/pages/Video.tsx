@@ -13,7 +13,9 @@ const Video = () => {
   return (
     <div>
       <section className="access">
-        <a href={movie.url}>{movie.url}</a>
+        <a target="_blank"
+          // eslint-disable-next-line max-len
+          href={movie.videoUrl} rel="noreferrer">Watch video in new tab</a>
       </section>
       <h1>{movie.title}</h1>
       <DisplayTags tags={movie.tags} />

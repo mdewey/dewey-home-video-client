@@ -7,6 +7,7 @@ export interface VideoTimeStamp {
 }
 
 export interface Movie {
+  videoUrl: string | undefined;
   id: string;
   title: string;
   filePath: string;
