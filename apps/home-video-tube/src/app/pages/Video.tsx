@@ -17,6 +17,11 @@ const Video = () => {
           // eslint-disable-next-line max-len
           href={movie.videoUrl} rel="noreferrer">Watch video in new tab</a>
       </section>
+      <section className="video">
+        <video controls>
+          <source src={movie.videoUrl} type="video/mp4" />
+        </video>
+      </section>
       <h1>{movie.title}</h1>
       <DisplayTags tags={movie.tags} />
       <ul>
