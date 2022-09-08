@@ -13,7 +13,6 @@ export function App() {
   const dispatch = useAppDispatch();
   useEffect(() => {
     axios.get(`${process.env["NX_METADATA_API_URL"]}api/Movies`).then(resp => {
-      console.log(resp);
       dispatch({ type: "SET_MOVIES", payload: resp.data });
     });
 

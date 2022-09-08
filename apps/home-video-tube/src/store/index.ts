@@ -20,10 +20,12 @@ export interface Movie {
 
 export interface AppState {
   allMovies: Movie[],
+  searchTerm: string,
 }
 
 const initialState: AppState = {
   allMovies: [],
+  searchTerm: '',
 };
 
 interface AppReducer {
@@ -34,6 +36,9 @@ const reducers: AppReducer = {
   "default": (state: AppState) => { return { ...state }; },
   'SET_MOVIES': (state: AppState, action: any) => {
     return { ...state, allMovies: action.payload };
+  },
+  "SEARCH_TERM_SET": (state: AppState, action: any) => {
+    return { ...state, searchTerm: action.payload.searchTerm };
   }
 };
 

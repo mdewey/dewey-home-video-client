@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+import { Link } from 'react-router-dom';
 
 const routes = [{ text: "Home", path: "/" }];
 
@@ -16,11 +17,17 @@ export default function NavBar() {
             Home Videos
           </Typography>
           <Box sx={{ display: 'block' }}>
-            {routes.map((item, i) => (
-              <Button key={i} sx={{ color: '#fff' }} href={item.path}>
-                {item.text}
-              </Button>
-            ))}
+            {routes.map((item, i) => {
+              return (
+                <Button
+                  key={i}
+                  sx={{ color: '#fff' }}
+                  href={item.path}
+                >
+                  {item.text}
+                </Button>
+              );
+            })}
           </Box>
         </Toolbar>
       </AppBar>

@@ -30,7 +30,7 @@ export default function MovieListItem(movie: Movie) {
         <Typography gutterBottom variant="h5" component="div">
           <a href={`/movie/${movie.id}`}>{movie.title}</a>
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2" color="text.secondary" component={"div"}>
           {/* <h3>{movie.length}</h3> */}
           <DisplayTags tags={movie.tags} />
         </Typography>
