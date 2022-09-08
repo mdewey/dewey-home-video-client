@@ -5,6 +5,7 @@ import { useAppSelector } from "../../hooks/redux";
 import DisplayTags from "../components/DisplayTags";
 import LaunchIcon from '@mui/icons-material/Launch';
 import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
 const Video = () => {
   const { id } = useParams();
   const [videoUrl, setVideoUrl] = useState("");
@@ -35,7 +36,13 @@ const Video = () => {
           :
           <>loading video url</>}
       </section>
-      <section>
+      <Paper sx={{
+        margin: '1rem',
+        padding: '2rem',
+        width: '100%',
+      }}
+        elevation={5}
+      >
         <h1>{movieMetaData.title} <a target="_blank"
           // eslint-disable-next-line max-len
           href={videoUrl} rel="noreferrer"><LaunchIcon /></a></h1>
@@ -47,7 +54,7 @@ const Video = () => {
         </ul>
         <DisplayTags tags={movieMetaData.tags} />
 
-      </section>
+      </Paper>
     </div>
   );
 };
