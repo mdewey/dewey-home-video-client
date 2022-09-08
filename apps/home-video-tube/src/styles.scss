@@ -20,3 +20,18 @@
     margin: 0.5rem;
   }
 }
+
+.video-page {
+  margin: 3rem;
+  display: flex;
+  justify-content: space-evenly;
+
+  // small screens display flex column
+  @media (max-width: 1000px) {
+    flex-direction: column;
+  }
+
+  .access {
+    font-size: 0.8rem;
+  }
+}
