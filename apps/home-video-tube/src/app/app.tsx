@@ -1,13 +1,12 @@
 import { Routes, Route } from "react-router-dom";
 import Home from './pages/Home';
 import About from './pages/About';
-import Menu from "./components/Menu";
 import Video from "./pages/Video";
 import axios from "axios";
 import { useEffect } from "react";
 import { useAppDispatch } from "../hooks/redux";
 import Search from "./pages/Search";
-
+import NavBar from "./components/NavBar";
 
 
 export function App() {
@@ -21,10 +20,10 @@ export function App() {
   }, [dispatch]);
   return (
     <>
-      <Menu />
+      <NavBar />
       <Routes>
         <Route path="/" element={<Search />} />
-        <Route path="/archive" element={<Home />} />
+        <Route path="/library" element={<Home />} />
         <Route path="/movie/:id" element={<Video />} />
         <Route path="about" element={<About />} />
       </Routes>

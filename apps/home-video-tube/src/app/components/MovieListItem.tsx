@@ -2,14 +2,40 @@ import React from 'react';
 import { Movie } from '../../store';
 import DisplayTags from './DisplayTags';
 
-function MovieListItem(movie: Movie) {
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+
+export default function MovieListItem(movie: Movie) {
   return (
-    <div className="movie-card">
-      <h2><a href={`/movie/${movie.id}`}>{movie.title}</a></h2>
-      {/* <h3>{movie.length}</h3> */}
-      <DisplayTags tags={movie.tags} />
-    </div>
+    <Card sx={{
+      width: {
+        xs: '100%',
+        sm: '100%',
+        md: '48%',
+        lg: '48%',
+        xl: '31%'
+      }
+    }} >
+      <CardMedia
+        component="img"
+        alt="green iguana"
+        height="140"
+        image="https://www.fillmurray.com/345/140"
+      />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          <a href={`/movie/${movie.id}`}>{movie.title}</a>
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          {/* <h3>{movie.length}</h3> */}
+          <DisplayTags tags={movie.tags} />
+        </Typography>
+      </CardContent>
+    </ Card>
   );
 }
 
-export default MovieListItem;

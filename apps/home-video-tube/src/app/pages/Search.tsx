@@ -1,13 +1,9 @@
 import SearchMovies from "../components/SearchMovies";
-function Home() {
+function Search() {
   return (
-    <><div>
-      Hello, world, home!
-    </div>
-      <SearchMovies />
-    </>
+    <SearchMovies />
   );
 
 }
 
-export default Home;
+export default Search;

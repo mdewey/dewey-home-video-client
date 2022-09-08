@@ -1,3 +1,5 @@
+import { Search } from '@mui/icons-material';
+import { Box, TextField } from '@mui/material';
 import React, { useMemo } from 'react';
 import { useAppSelector } from '../../hooks/redux';
 import MovieListItem from './MovieListItem';
@@ -26,9 +28,25 @@ function SearchMovies() {
       });
   }, [movies, searchTerm]);
   return (
-    <div>
-      <input type="search" name="" id=""
-        onChange={e => setSearchTerm(e.target.value)} />
+    <div className="search-page">
+      <Box sx={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginTop: '1.5rem',
+        width: '100%'
+      }}>
+        <Search sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
+        <TextField
+          id="outlined-basic"
+          label="Search for a memory"
+          variant="outlined"
+          onChange={e => setSearchTerm(e.target.value)}
+          sx={{ width: '75%' }}
+        />
+      </Box>
+
+
       <ul className='library-list'>
         {filteredMovies.map(movie => (
           <MovieListItem key={movie.id} {...movie} />
