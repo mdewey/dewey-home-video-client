@@ -1,12 +1,9 @@
-import React from 'react';
 import { Movie } from '../../store';
 import DisplayTags from './DisplayTags';
 
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 export default function MovieListItem(movie: Movie) {
@@ -24,14 +21,14 @@ export default function MovieListItem(movie: Movie) {
         component="img"
         alt="green iguana"
         height="140"
-        image="https://www.fillmurray.com/345/140"
+        image={movie.imageUrl}
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           <a href={`/movie/${movie.id}`}>{movie.title}</a>
         </Typography>
         <Typography variant="body2" color="text.secondary" component={"div"}>
-          {/* <h3>{movie.length}</h3> */}
+          <h3>{movie.length}</h3>
           <DisplayTags tags={movie.tags} />
         </Typography>
       </CardContent>

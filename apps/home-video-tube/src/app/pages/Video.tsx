@@ -44,7 +44,6 @@ const Video = () => {
         elevation={5}
       >
         <h1>{movieMetaData.title} <a target="_blank"
-          // eslint-disable-next-line max-len
           href={videoUrl} rel="noreferrer"><LaunchIcon /></a></h1>
 
         <ul>

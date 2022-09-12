@@ -16,6 +16,7 @@ export interface Movie {
   length: string;
   tags: string[];
   videoTimeStamps: VideoTimeStamp[];
+  imageUrl: string;
 }
 
 export interface AppState {
