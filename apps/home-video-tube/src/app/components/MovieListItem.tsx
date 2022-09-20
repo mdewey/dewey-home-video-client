@@ -7,6 +7,8 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 
 export default function MovieListItem(movie: Movie) {
+  const imageUrl =
+    `${process.env["NX_METADATA_API_URL"]}api/Movies/${movie.id}/image`;
   return (
     <Card sx={{
       width: {
@@ -21,14 +23,14 @@ export default function MovieListItem(movie: Movie) {
         component="img"
         alt="green iguana"
         height="140"
-        image={movie.imageUrl}
+        image={imageUrl}
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           <a href={`/movie/${movie.id}`}>{movie.title}</a>
         </Typography>
         <Typography variant="body2" color="text.secondary" component={"div"}>
-          <h3>{movie.length}</h3>
+          <h3>{movie.length.split('.')[0]}</h3>
           <DisplayTags tags={movie.tags} />
         </Typography>
       </CardContent>
