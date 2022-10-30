@@ -5,6 +5,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+import { Link } from 'react-router-dom';
 
 export default function MovieListItem(movie: Movie) {
   const imageUrl =
@@ -27,7 +28,7 @@ export default function MovieListItem(movie: Movie) {
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          <a href={`/movie/${movie.id}`}>{movie.title}</a>
+          <Link to={`/movie/${movie.id}`}>{movie.title}</Link>
         </Typography>
         <Typography variant="body2" color="text.secondary" component={"div"}>
           <h3>{movie.length.split('.')[0]}</h3>
