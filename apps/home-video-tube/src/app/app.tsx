@@ -12,9 +12,10 @@ import NavBar from "./components/NavBar";
 export function App() {
   const dispatch = useAppDispatch();
   useEffect(() => {
-    axios.get(`${process.env["NX_METADATA_API_URL"]}api/Movies`).then(resp => {
-      dispatch({ type: "SET_MOVIES", payload: resp.data });
-    });
+    axios.get(`${process.env["NX_METADATA_API_URL"]}api/v2/Movies`)
+      .then(resp => {
+        dispatch({ type: "SET_MOVIES", payload: resp.data });
+      });
 
   }, [dispatch]);
   return (

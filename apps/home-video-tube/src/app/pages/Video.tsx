@@ -14,7 +14,7 @@ const Video = () => {
   useEffect(() => {
     // call API to get movie stream URL
     axios
-      .get(`${process.env["NX_METADATA_API_URL"]}api/Movies/${id}/video`)
+      .get(`${process.env["NX_METADATA_API_URL"]}api/v2/Movies/${id}/video`)
       .then(resp => {
         setVideoUrl(resp.data.videoUrl);
       });

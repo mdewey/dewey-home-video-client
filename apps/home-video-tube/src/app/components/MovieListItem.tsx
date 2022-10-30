@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 
 export default function MovieListItem(movie: Movie) {
   const imageUrl =
-    `${process.env["NX_METADATA_API_URL"]}api/Movies/${movie.id}/image`;
+    `${process.env["NX_METADATA_API_URL"]}api/v2/Movies/${movie.id}/image`;
   return (
     <Card sx={{
       width: {
