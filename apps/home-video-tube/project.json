@@ -5,7 +5,9 @@
   "targets": {
     "build": {
       "executor": "@nrwl/web:webpack",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "defaultConfiguration": "production",
       "options": {
         "compiler": "babel",
@@ -17,9 +19,12 @@
         "tsConfig": "apps/home-video-tube/tsconfig.app.json",
         "assets": [
           "apps/home-video-tube/src/favicon.ico",
-          "apps/home-video-tube/src/assets"
+          "apps/home-video-tube/src/assets",
+          "apps/home-video-tube/netlify.toml"
         ],
-        "styles": ["apps/home-video-tube/src/styles.scss"],
+        "styles": [
+          "apps/home-video-tube/src/styles.scss"
+        ],
         "scripts": [],
         "webpackConfig": "@nrwl/react/plugins/webpack"
       },
@@ -65,14 +70,20 @@
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["apps/home-video-tube/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": [
+          "apps/home-video-tube/**/*.{ts,tsx,js,jsx}"
+        ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/home-video-tube"],
+      "outputs": [
+        "coverage/apps/home-video-tube"
+      ],
       "options": {
         "jestConfig": "apps/home-video-tube/jest.config.ts",
         "passWithNoTests": true
