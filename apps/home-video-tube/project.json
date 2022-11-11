@@ -20,7 +20,7 @@
         "assets": [
           "apps/home-video-tube/src/favicon.ico",
           "apps/home-video-tube/src/assets",
-          "apps/home-video-tube/netlify.toml"
+          "apps/home-video-tube/src/netlify.toml"
         ],
         "styles": [
           "apps/home-video-tube/src/styles.scss"
