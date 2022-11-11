@@ -22,7 +22,7 @@ function SearchMovies() {
             t.toLowerCase().includes(searchTerm.toLowerCase())) ||
           movie.videoTimeStamps.some(s =>
             s.description.toLowerCase().includes(searchTerm.toLowerCase()));
-      });
+      }).sort((a, b) => a.title.localeCompare(b.title));
   }, [movies, searchTerm]);
 
   useEffect(() => {
