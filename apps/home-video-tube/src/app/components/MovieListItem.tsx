@@ -19,7 +19,7 @@ export default function MovieListItem(movie: Movie) {
         lg: '48%',
         xl: '31%'
       }
-    }} >
+    }} className="movie-card">
       <CardMedia
         component="img"
         alt="green iguana"

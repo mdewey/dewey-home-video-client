@@ -13,7 +13,7 @@ function SearchMovies() {
   const filteredMovies = useMemo(() => {
     if (!searchTerm) {
       return [...movies]
-        .sort((a, b) => Math.random() > 0.5 ? 1 : -1);
+        .sort((a, b) => a.title.localeCompare(b.title));
     }
     return movies
       .filter(movie => {
